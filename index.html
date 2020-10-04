@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Todo list</h1>
+        <a href="#"><i class="fas fa-home"></i></a>
+    </header>
+    <main>
+        <section>
+            <h2>Todo</h2>
+            <ul>
+                <li class="todo">Sport <i class="far fa-square"></i></li>
+                <li class="todo"><input type="text" placeholder="Jeter poubelle jaune"><span>
+                        <i class="fas fa-edit"></i><i class="far fa-trash-alt">
+                    </span></i>
+                </li>
+                <li class="done">Mail banque <i class="far fa-check-square"></i></li>
+                <li class="done"><input type="text" placeholder="Faire à manger pour la semaine"> <span>
+                        <i class="fas fa-edit"></i><i class="far fa-trash-alt">
+                    </span></i></li>
+
+                <li id="add"><input type="text" required><i class="fas fa-plus"></i></li>
+
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;Copyright 2020 Nicolas Yang</p>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
