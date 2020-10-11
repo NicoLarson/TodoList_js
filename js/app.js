@@ -10,6 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     let todoArray = []
+    let displayArray = () => {
+        for (key in todoArray)
+            todoListSection.innerHTML += `<li class="todo">${todoArray[key].title} <i class="far fa-square"></i></li>`
+        switch (todoArray[key].status) {
+            case ("todo"):
+                todoInList[key].className = 'todo'
+                break;
+            case ("done"):
+                todoInList[key].className = 'todo'
+                break;
+            case ("modif"):
+                todoInList[key].className = 'todo'
+                break;
+            default:
+                console.log("Default")
+        }
+    }
 
     let Todo = function (title, status, position) {
         this.title = title
@@ -30,28 +47,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //** AFFICHER
-    let displayTodoList = () => {
-        todoListSection.innerHTML = ""
-        for (key in todoArray)
-            switch (todoArray[key].status) {
-                case ("todo"):
-                    todoListSection.innerHTML += `<li class="todo">${todoArray[key].title} <i class="far fa-square"></i></li>`
-                    break;
-                case ("done"):
-                    todoListSection.innerHTML += `<li class="done">${todoArray[key].title} <i class="far fa-check-square"></i></li>`
-                    break;
-                case ("modif"):
-                    todoListSection.innerHTML += `<li><input type="text" placeholder="${todoArray[key].title}"><i class="fas fa-edit"></i><i class="far fa-trash-alt">
-                </i></li>`
-                    break;
-                default:
-                    console.log("Default")
-            }
-    }
-    displayTodoList()
-
+    /*     let displayTodoList = () => {
+            todoListSection.innerHTML = ""
+            for (key in todoArray)
+                switch (todoArray[key].status) {
+                    case ("todo"):
+                        todoListSection.innerHTML += `<li class="todo">${todoArray[key].title} <i class="far fa-square"></i></li>`
+                        break;
+                    case ("done"):
+                        todoListSection.innerHTML += `<li class="done">${todoArray[key].title} <i class="far fa-check-square"></i></li>`
+                        break;
+                    case ("modif"):
+                        todoListSection.innerHTML += `<li><input type="text" placeholder="${todoArray[key].title}"><i class="fas fa-edit"></i><i class="far fa-trash-alt">
+                    </i></li>`
+                        break;
+                    default:
+                        console.log("Default")
+                }
+        }
+        displayTodoList()
+     */
     //** AJOUTER */
-    let addNewTodo = () => {
+/*     let addNewTodo = () => {
         let newTodo = new Todo(`${newTodoTitle.value}`, "todo", todoArray[-1])
         todoArray.push(newTodo)
         console.table(todoArray)
@@ -62,26 +79,33 @@ document.addEventListener('DOMContentLoaded', () => {
     addIcon.addEventListener('click', () => {
         newTodoTitle.value != "" ? addNewTodo() : false
     })
-
+ */
     //* CHECK UNCHECK
-    let checkUncheck = () => {
-        for (let i = 0; i < todoInList.length; i++) {
-            if (todoArray[i].status == "todo") {
+  /*   let checkUncheck = (i) => {
+        switch (todoArray[i].status) {
+            case "todo":
                 todoArray[i].status = "done"
-            } else if (todoArray[i].status == "done") {
+                break;
+            case "done":
                 todoArray[i].status = "todo"
-            }
-            displayTodoList()
-            console.table(todoArray)
+                break
+            default:
+                false
         }
+        console.table(todoArray)
+        displayTodoList()
     }
 
-    for (key in todoInList)
-        todoInList[key].addEventListener('click', () => {
-            console.log(todoInList[key])
-        })
-
-
+    todoInList[0].addEventListener('click', () => {
+        checkUncheck(0)
+    })
+    todoInList[1].addEventListener('click', () => {
+        checkUncheck(1)
+    })
+    todoInList[2].addEventListener('click', () => {
+        checkUncheck(2)
+    })
+ */
     //* REMOVE 
 
 
