@@ -11,15 +11,6 @@
   --font-size-i: 3rem;
   --font-size-li: 2rem;
 }
-html {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
 /* HEADER */
 header {
   display: flex;
@@ -40,6 +31,53 @@ header a i {
   font-size: 4rem;
 }
 /* MAIN */
+main i {
+  cursor: pointer;
+}
+main > section {
+  margin: 0rem auto;
+}
+main > section section:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-h2-background);
+  color: var(--color-h2-font);
+  font-size: 2rem;
+  height: 12rem;
+  padding: 1.2rem;
+}
+main > section section:first-child i {
+  align-self: flex-end;
+}
+main > section section:last-child ul li {
+  max-width: 100%;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border: 1px solid rgb(209, 209, 209);
+}
+main > section section:last-child ul li p {
+  display: inline-block;
+}
+main > section section:last-child ul li i:last-child {
+  float: right;
+}
+main > section section:last-child ul li .fa-check-circle {
+  background-color: var(--color-list-done);
+  border-radius: 100%;
+}
+main > section section:last-child section {
+}
+main > section section:last-child section i {
+  font-size: 2.4rem;
+  padding: 1.2rem;
+}
+main > section section:last-child section input {
+  padding: 0 1rem;
+  font-size: 2rem;
+  border: none;
+  width: calc(100% - 10rem);
+}
 
 /* FOOTER */
 footer {
@@ -47,7 +85,16 @@ footer {
   color: var(--color-white);
 }
 footer p {
+  padding: 2rem;
   font-size: 1.2rem;
 }
 
 /* ANIM */
+main > section section:first-child i {
+  transform: rotate(0);
+  transition: 1s;
+}
+main > section section:first-child i:hover,
+main > section section:first-child i:active {
+  transform: rotate(360deg);
+}
